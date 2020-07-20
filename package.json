@@ -1,0 +1,26 @@
+{
+  "name": "test2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "test": "mocha ./test/* --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaoyangCui0830/test2.git"
+  },
+  "author": "Haoyang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaoyangCui0830/test2/issues"
+  },
+  "homepage": "https://github.com/HaoyangCui0830/test2#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1",
+    "supertest": "^4.0.2"
+  }
+}
