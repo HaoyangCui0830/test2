@@ -10,8 +10,8 @@ app.get("/", function (req, res) {
 
 app.get("/version", function (req, res) {
 	require('child_process').exec('git rev-parse HEAD', function(err, stdout) {
-		require('child_process').exec('git tag', function(err, v) {
-    	return res.send({"version": v, "lastcommitsha": stdout, 
+		require('child_process').exec("git ls-remote --tags | grep -o 'refs/tags/v[0-9]*\.[0-9]*' | sort -r | head | grep -o '[^\/]*$'", function(err, v) {
+    	return res.send({"version": v.substr(0, v.indexOf('\n')), "lastcommitsha": stdout, 
     		"description" : "test2 outcome"});
     });
 	});
