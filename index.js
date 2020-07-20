@@ -10,7 +10,10 @@ app.get("/", function (req, res) {
 
 app.get("/version", function (req, res) {
 	require('child_process').exec('git rev-parse HEAD', function(err, stdout) {
-    	return res.send({"version": "1.0", "lastcommitsha": stdout, "description" : "pre-interview technical test"});
+		require('child_process').exec('git tag', function(err, v) {
+    	return res.send({"version": v, "lastcommitsha": stdout, 
+    		"description" : "test2 outcome"});
+    });
 	});
 });
 
