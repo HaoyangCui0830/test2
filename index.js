@@ -9,8 +9,11 @@ app.get("/", function (req, res) {
 });
 
 app.get("/version", function (req, res) {
- return res.send({"version": "1.0", "lastcommitsha": "abc57858585", "description" : "pre-interview technical test"});
+	require('child_process').exec('git rev-parse HEAD', function(err, stdout) {
+    	return res.send({"version": "1.0", "lastcommitsha": stdout, "description" : "pre-interview technical test"});
+	});
 });
+
 
 // listen to port 7000 by default
 app.listen(process.env.PORT || 7000, () => {
