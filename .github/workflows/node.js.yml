@@ -40,6 +40,3 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/test2
-          git pull origin master
-          npm install --production
-          pm2 restart index.js
