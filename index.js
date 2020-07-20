@@ -5,7 +5,11 @@ const app = express();
 
 // Respond with "hello world" for requests that hit our root "/"
 app.get("/", function (req, res) {
- return res.send("Hello World!!");
+ return res.send("Hello World!");
+});
+
+app.get("/version", function (req, res) {
+ return res.send({"version": "1.0", "lastcommitsha": "abc57858585", "description" : "pre-interview technical test"});
 });
 
 // listen to port 7000 by default
