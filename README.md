@@ -1,4 +1,4 @@
-# test2
+# ANZ TEST 2
 
 The application is built using Node.js and Express, Mocha is used for unit test
 
